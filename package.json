@@ -1,0 +1,21 @@
+{
+  "name": "navigation",
+  "version": "1.0.0",
+  "description": "navigation-exercise",
+  "main": "navigation.js",
+  "scripts": {
+    "start": "node src/server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andreja",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.3",
+    "express": "^4.17.1",
+    "handlebars": "^4.7.7",
+    "hbs": "^4.1.2",
+    "jquery": "^3.6.0",
+    "nodemon": "^2.0.7"
+  }
+}

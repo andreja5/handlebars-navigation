@@ -1,0 +1,259 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Main header navigation */
+.o-header-nav {
+  width: 100%;
+}
+
+.m-header-nav__list {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.m-header-nav__item {
+  width: 100%;
+  position: relative;
+}
+
+.m-header-nav__item:hover {
+  color: #dadada;
+}
+
+.m-header-nav__item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: #000;
+}
+
+.a-header-nav__link {
+  position: relative;
+  width: 100%;
+  font-size: 1.2rem;
+  font-weight: 700;
+  height: 5rem;
+  max-width: 24rem;
+  padding: 2rem;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: black;
+  /* pointer-events: all; */
+}
+
+.a-header-nav__link:after {
+  position: absolute;
+  content: "";
+  height: 2px;
+  bottom: 0;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: #dadada;
+  transition: 0.6s;
+  transition: 0.5s;
+}
+
+.a-header-nav__link:hover:after {
+    height: 5px;
+}
+
+.m-header-nav__item .m-nested-nav {
+    display: none;
+}
+
+/* Nested navigation */
+.m-header-nav__item:hover .m-nested-nav {
+    display: block;
+    position: absolute;
+    right: 0;
+    background-color: #dadada;
+    z-index: 1;
+}
+
+.m-header-nav__item:hover .a-nested-nav__link {
+    color: #000;
+    padding: 1rem;
+    width: 100%;
+    font-size: 1rem;
+    height: 3rem;
+    max-width: 24rem;
+    padding: 1rem;
+    display: block;
+    white-space: nowrap;
+    color: black;
+}
+
+.m-header-nav__item:hover .a-nested-nav__item:hover {
+    background-color: gray;   
+}
+
+.m-header-nav__item:hover .a-nested-nav__link:hover {
+    color: #fff; 
+}
+
+/* Hamburger */
+.a-hamburger {
+  display: none;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.a-hamburger div {
+  width: 25px;
+  height: 4px;
+  margin: 5px;
+  background-color: #000;
+}
+
+/* Close button */
+.a-close-button {
+  display: none;
+}
+
+/* Media queries */
+@media (min-width: 740px) and (max-width: 1281px) {
+  .m-header-nav__list {
+    margin-left: 50%;
+    position: relative;
+    height: 100vh;
+    width: 50%;
+    flex-direction: column;
+    align-items: flex-start;
+    display: none;
+  }
+
+  .m-header-nav__item {
+    width: 100%;
+    height: 3.5rem;
+    padding: 0 1rem;
+  }
+
+  .a-header-nav__link {
+    padding: 1rem 0;
+    height: 3.5rem;
+    max-width: 100%;
+    line-height: 1.5rem;
+    font-weight: normal;
+    font-size: 1.3rem;
+    display: block;
+  }
+
+  .a-header-nav__link::after {
+    background-color: #dadada;
+    height: 0.1rem;
+    width: 100%;
+    left: 0rem;
+  }
+
+  .m-header-nav__item:hover .m-nested-nav {
+    width: 60%;
+    right: 1rem;
+    position: absolute;
+  }
+
+  .a-hamburger {
+    display: block;
+    float: right;
+  }
+
+  .open {
+    display: flex;
+  }
+
+  .a-close-button {
+    display: block;
+    width: 100%;
+    height: 4rem;
+    padding: 1rem 0;
+    z-index: 1;
+  }
+
+  .a-close-button a {
+    float: right;
+    height: 30px;
+    width: 30px;
+  }
+
+  .a-close-button a i {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 739px) {
+  .m-header-nav__list {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    display: none;
+  }
+
+  .m-header-nav__item {
+    width: 90%;
+    position: relative;
+    min-height: 3rem;
+    padding: 0 1rem;
+  }
+
+  .a-header-nav__link {
+    font-size: 1.2rem;
+    font-weight: normal;
+    max-width: 100%;
+    padding: 1rem 0;
+    height: 3rem;
+  }
+
+  .a-header-nav__link::after {
+    background-color: #dadada;
+    height: 0.1rem;
+    width: 100%;
+    left: 0;
+  }
+
+  .m-header-nav__item:hover .m-nested-nav {
+    width: 50%;
+    right: 1rem;
+    position: absolute;
+  }
+
+  .a-hamburger {
+    display: block;
+    float: right;
+  }
+
+  .open {
+    display: flex;
+  }
+
+  .a-close-button {
+    display: block;
+    width: 100%;
+    height: 4rem;
+    padding: 1rem;
+    background: #fff;
+  }
+
+  .a-close-button a {
+    float: right;
+    height: 30px;
+    width: 30px;
+  }
+}
